@@ -125,6 +125,9 @@ export class TodoList extends React.Component {
     return (
       <div>
         {this.props.render(this.state.items, this.handleClickRemoveButton)}
+        {/* Second Way */}
+        {/* {this.props.children(this.state.items, this.handleClickRemoveButton)} */}
+
         {/* <ul> */}
         {/* {this.props.todos.map((todo) => (
             <li key={todo.id}>{todo.title}</li>

@@ -34,6 +34,7 @@ export class App extends React.Component {
         {/* <InteractiveWelcome /> */}
         {/* <Login login="test" /> */}
         {/* <UncontrolledLogin login={this.defaultLoginStatus} /> */}
+
         <TodoList
           // items = this.state.item
           render={(items, handleEvent) => {
@@ -60,6 +61,35 @@ export class App extends React.Component {
             );
           }}
         ></TodoList>
+
+        {/* Second Way */}
+        {/* <TodoList
+        // items = this.state.item
+        >
+          {(items, handleEvent) => {
+            console.log(items);
+            // console.log(handleEvent);
+            return (
+              <ul>
+                {items.map((item, index) => (
+                  <li key={item.id}>
+                    {item.title}
+                    <button
+                      className="remove_buttons"
+                      // onClick={() => this.handleClickRemoveButton(index)}
+                      onClick={() => handleEvent(index)}
+                      // onClick={(e) => {
+                      //   this.handleClickRemoveButton(e.target);
+                      // }}
+                    >
+                      Remove the Item
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            );
+          }}
+        </TodoList> */}
       </Container>
     );
   }
